@@ -1,20 +1,16 @@
 <template>
   <div class="game">
-    <h1>
-      {{gameObject.players[0].name}}
-    </h1>
+    <player></player>
+    <enemy></enemy>
   </div>
 
 </template>
 
 <script>
+  import Player from '../components/Player'
+  import Enemy from '../components/Enemy'
   export default {
     name: "game",
-    data() {
-      return {
-        gameObject = {}
-      }
-    },
     computed: {
       gameObject() {
         return this.$store.state.gameObject;
@@ -22,6 +18,10 @@
     },
     method: {
 
+    },
+    components: {
+      Player,
+      Enemy
     }
   }
 </script>
