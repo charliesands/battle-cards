@@ -14,7 +14,9 @@ export default new Vuex.Store({
   state: {
     gameObject: {},
     games: [],
-    game: {}
+    playerCard: {}, //no need?
+    enemyCard: {},
+    fightObject: {}
   },
   mutations: {
     startGame(state, data) {
@@ -23,14 +25,22 @@ export default new Vuex.Store({
     setList(state, data) {
       state.games = data
     },
-    setGame(state, data) {
-      state.game = data
+    setPlayerCard(state, data) {
+      state.playerCard = data
+    },
+    setEnemyCard(state, data) {
+      state.enemyCard = data
+    },
+    setFight(state, data) {
+      state.fightObject = data
     }
+
   },
   actions: {
     createGame({ commit, dispatch }, gameData) {
       gameApi.post('', gameData)
         .then(game => {
+          // console.log(game.data)
           commit('startGame', game.data)
           router.push({ name: 'game' })
         })
@@ -42,13 +52,20 @@ export default new Vuex.Store({
         })
     },
     getGame({ commit, dispatch }, gameId) {
-      gameApi.get('/', gameId)
+      gameApi.get('/' + gameId)
+        .then(game => {
+          commit('startGame', game.data.data)
+          router.push({ name: 'game' })
+        })
+    },
+    fight({ commit, dispatch }, fightObject) {
+      gameApi.put('/' + fightObject.gameId, fightObject)
         .then(game => {
           console.log(game)
-          // commit('setGame', game.data._id)
-          // router.push({ name: 'game' }) //game?
-        })
+          dispatch('getGame', fightObject.gameId)
+          // router.push({ name: 'game' })
+        }
+        )
     }
   }
-
 })

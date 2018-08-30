@@ -11,7 +11,8 @@
     </form>
     <div>
       <p v-for="game in gamesList">
-        Game ID: {{game._id}} {{game.players[0].name}} vs. {{game.players[1].name}}
+        <!-- Game ID: {{game._id}} -->
+        {{game.players[0].name}} vs. {{game.players[1].name}}
         <button @click="selectGame(game.id)">Continue</button>
       </p>
     </div>
@@ -56,8 +57,8 @@
       goToGame() {
         router.push({ name: 'game' }) //not used
       },
-      selectGame() {
-        this.$store.dispatch('getGame', this.game._id)
+      selectGame(gameId) {
+        this.$store.dispatch('getGame', gameId)
       }
 
     }
