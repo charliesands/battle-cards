@@ -12,7 +12,7 @@
     <div>
       <p v-for="game in gamesList">
         Game ID: {{game._id}} {{game.players[0].name}} vs. {{game.players[1].name}}
-        <button @click="">Continue</button>
+        <button @click="selectGame(game.id)">Continue</button>
       </p>
     </div>
   </div>
@@ -37,6 +37,9 @@
     computed: {
       gamesList() {
         return this.$store.state.games
+      },
+      singleGame() {
+        return this.$store.state.game
       }
     },
     components: {
@@ -51,8 +54,12 @@
       },
       //mounted listGames
       goToGame() {
-        router.push({ name: 'game' })
+        router.push({ name: 'game' }) //not used
+      },
+      selectGame() {
+        this.$store.dispatch('getGame', this.game._id)
       }
+
     }
   }
 
