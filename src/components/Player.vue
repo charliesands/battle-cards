@@ -9,7 +9,7 @@
     </div>
     <div class="row">
       <div class="col-2 " v-for="card in player.hand" @click="fnclick(player.id, card.id)">
-        <img :src="card.img">
+        <img :src="card.img" id="imageId">
         <p>{{card.name}} <br> Attack:{{card.attack}} Health: {{card.health}} Defense: {{card.defense}}</p>
       </div>
     </div>
@@ -32,8 +32,8 @@
       }
     },
     method: {
-      // border(img) {
-      //   img.style.border = "1px solid blue"
+      // border(el) {
+      //   el.style.border = "1px solid blue"
       // }
     }
   }
