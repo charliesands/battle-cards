@@ -1,7 +1,7 @@
 <template>
   <div class="enemy container-fluid">
     <div class="row">
-      <div class="col-sm-2">
+      <div class="col align-text-center">
         <h1>
           {{enemy.name}}
         </h1>
@@ -14,14 +14,11 @@
           <p>{{card.name}} <br> Attack:{{card.attack}} Health: {{card.health}} Defense: {{card.defense}} </p>
         </div>
         <div v-if="!card.visible">
-          <img src="../assets/exploration2.jpg">
+          <img src="../assets/exploration2.jpg" class="card-back">
         </div>
       </div>
     </div>
-
-
   </div>
-
 </template>
 
 <script>
@@ -43,3 +40,10 @@
     }
   }
 </script>
+
+<style>
+  .card-back {
+    width: auto;
+    height: 300px
+  }
+</style>

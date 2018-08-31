@@ -2,9 +2,9 @@
   <div class="home">
 
     <form v-on:submit.prevent="startGame">
-      <input type="text" v-model="game.gameConfig.playerName">
-      <input type="number" v-model="game.gameConfig.opponents">
-      <input type="number" v-model="game.gameConfig.set">
+      <input type="text" v-model="game.gameConfig.playerName" placeholder="Your Name">
+      <input type="number" v-model="game.gameConfig.opponents" placeholder="# of Opponents">
+      <input type="number" v-model="game.gameConfig.set" placeholder="Set #">
       <button @click="startGame">Start</button>
       <button type="button" @click="gameList">Games</button>
 
