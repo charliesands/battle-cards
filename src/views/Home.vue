@@ -1,10 +1,11 @@
 <template>
   <div class="home">
+    <h1>BattleCards</h1>
 
     <form v-on:submit.prevent="startGame">
-      <input type="text" v-model="game.gameConfig.playerName" placeholder="Your Name">
-      <input type="number" v-model="game.gameConfig.opponents" placeholder="# of Opponents">
-      <input type="number" v-model="game.gameConfig.set" placeholder="Set #">
+      Enter Name: <input type="text" v-model="game.gameConfig.playerName" placeholder="Your Name"> <br># of Opponents: <input
+        type="number" v-model="game.gameConfig.opponents" placeholder="# of Opponents"><br> Deck #: <input type="number" v-model="game.gameConfig.set"
+        placeholder="Set #">
       <button @click="startGame">Start</button>
       <button type="button" @click="gameList">Games</button>
 
@@ -65,3 +66,15 @@
   }
 
 </script>
+
+<style>
+  body {
+    background-color: black;
+    height: 100vh;
+    color: antiquewhite;
+  }
+
+  .home {
+    color: antiquewhite;
+  }
+</style>

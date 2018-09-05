@@ -14,12 +14,15 @@ export default new Vuex.Store({
   state: {
     gameObject: {},
     games: [],
-    playerCard: {}, //no need?
+    playerCard: {},
     enemyCard: {},
     fightObject: {}
   },
   mutations: {
     startGame(state, data) {
+      if (data.players[0].hand.find(c => c.id == state.playerCard.id)) {
+        state.playerCard = {}
+      }
       state.gameObject = data
     },
     setList(state, data) {
@@ -66,6 +69,9 @@ export default new Vuex.Store({
           // router.push({ name: 'game' })
         }
         )
+    },
+    setPlayerCard({ commit }, card) {
+      commit('setPlayerCard', card)
     }
   }
 })
