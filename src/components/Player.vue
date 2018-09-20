@@ -14,18 +14,17 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
   export default {
     name: "player",
-    props: {
-      fnclick: {
-        type: Function,
-        required: true
-      }
-    },
+    // props: {
+    //   fnclick: {
+    //     type: Function,
+    //     required: true
+    //   }
+    // },
     computed: {
       player() {
         return this.$store.state.gameObject.players[0];

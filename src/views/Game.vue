@@ -4,11 +4,15 @@
       {{game.winner.name}}
     </div>
     <div v-else>
-      <player :fnclick="setPlayerCard"></player>
+      <player>
+        <!-- :fnclick="setPlayerCard"> -->
+      </player>
       <!-- <div v-if="player.name && enemy.name"> -->
       <button @click="fight" v-if="">Fight</button>
       <!-- </div> -->
-      <enemy :fnclick="setOpponentCard"></enemy>
+      <enemy>
+        <!-- :fnclick="setOpponentCard"> -->
+      </enemy>
     </div>
   </div>
 
