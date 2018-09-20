@@ -7,6 +7,9 @@ Vue.use(Vuex)
 
 let gameApi = Axios.create({
   baseURL: 'https://inspire-server.herokuapp.com/cards',
+
+
+
   timeout: 3000
 })
 

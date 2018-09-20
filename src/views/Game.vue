@@ -49,6 +49,9 @@
       },
       opponentCard() {
         return this.$store.state.opponentCard
+      },
+      enemyCard() {
+        return this.$store.state.enemyCard
       }
     },
     methods: {  ///can i use same name
