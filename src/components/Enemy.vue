@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-2" v-for="card in enemy.hand" @click="setEnemyCard(card)" :class="{active: card == playerCard}">
+      <div class="col-2" v-for="card in enemy.hand" @click="setEnemyCard(card)" :class="{active: card == enemyCard}">
         <div v-if="card.visible">
           <img :src="card.img">
           <p>{{card.name}} <br> Attack:{{card.attack}} Health: {{card.health}} Defense: {{card.defense}} </p>
@@ -33,6 +33,9 @@
     computed: {
       enemy() {
         return this.$store.state.gameObject.players[1];
+      },
+      enemyCard() {
+        return this.$store.state.enemyCard
       }
     },
     method: {

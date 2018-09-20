@@ -54,7 +54,7 @@
         return this.$store.state.enemyCard
       }
     },
-    methods: {  ///can i use same name
+    methods: {
       fight() {
         let attack = {
           gameId: this.gameObject.id,

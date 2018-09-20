@@ -7,9 +7,6 @@ Vue.use(Vuex)
 
 let gameApi = Axios.create({
   baseURL: 'https://inspire-server.herokuapp.com/cards',
-
-
-
   timeout: 3000
 })
 
@@ -75,6 +72,9 @@ export default new Vuex.Store({
     },
     setPlayerCard({ commit }, card) {
       commit('setPlayerCard', card)
+    },
+    setEnemyCard({ commit }, card) {
+      commit('setEnemyCard', card)
     }
   }
 })
