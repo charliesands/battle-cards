@@ -38,7 +38,7 @@
         return this.$store.state.enemyCard
       }
     },
-    method: {
+    methods: {
       setEnemyCard(card) {
         this.$store.dispatch('setEnemyCard', card)
       }

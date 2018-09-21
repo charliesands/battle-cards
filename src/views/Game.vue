@@ -1,18 +1,15 @@
 <template>
   <div class="game">
     <div v-if="gameObject.over">
-      {{game.winner.name}}
+      {{gameObject.winner.name}} Wins!
     </div>
     <div v-else>
-      <player>
-        <!-- :fnclick="setPlayerCard"> -->
-      </player>
-      <!-- <div v-if="player.name && enemy.name"> -->
-      <button @click="fight" v-if="">Fight</button>
-      <!-- </div> -->
-      <enemy>
-        <!-- :fnclick="setOpponentCard"> -->
-      </enemy>
+      <player></player>
+      <div>
+        <h1>Choose two cards and </h1>
+        <button @click="fight">Fight!</button>
+      </div>
+      <enemy></enemy>
     </div>
   </div>
 
@@ -25,13 +22,6 @@
     name: "game",
     data() {
       return {
-        // fightObject: {
-        //   playerId: "",
-        //   playerCardId: "",
-        //   opponentId: "",
-        //   opponentCardId: "",
-        //   gameId: ""
-        // }
       }
     },
     computed: {
@@ -59,21 +49,12 @@
         let attack = {
           gameId: this.gameObject.id,
           playerId: this.player.id,
-          opponentId: this.opponentId,
+          opponentId: this.opponent.id,
           playerCardId: this.playerCard.id,
-          opponentCardId: this.opponentCard.id
+          opponentCardId: this.enemyCard.id
         }
         this.$store.dispatch('fight', attack)
       },
-      // setPlayerCard(playerId, playerCardId) {
-      //   this.fightObject.playerId = playerId
-      //   this.fightObject.playerCardId = playerCardId
-      // },
-      // setOpponentCard(opponentId, opponentCardId) {
-      //   this.fightObject.opponentId = opponentId
-      //   this.fightObject.opponentCardId = opponentCardId
-      // }
-
     },
     components: {
       Player,
