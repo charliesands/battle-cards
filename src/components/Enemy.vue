@@ -24,12 +24,6 @@
 <script>
   export default {
     name: "enemy",
-    // props: {
-    //   fnclick: {
-    //     type: Function,
-    //     required: true
-    //   }
-    // },
     computed: {
       enemy() {
         return this.$store.state.gameObject.players[1];

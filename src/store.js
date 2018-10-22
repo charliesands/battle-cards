@@ -66,7 +66,6 @@ export default new Vuex.Store({
         .then(game => {
           console.log(game)
           dispatch('getGame', fightObject.gameId)
-          // router.push({ name: 'game' })
         }
         )
     },

@@ -57,9 +57,8 @@
       gameList() {
         this.$store.dispatch('listGames')
       },
-      //mounted listGames
       goToGame() {
-        router.push({ name: 'game' }) //not used
+        router.push({ name: 'game' })
       },
       selectGame(gameId) {
         this.$store.dispatch('getGame', gameId)

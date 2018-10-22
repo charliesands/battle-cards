@@ -19,12 +19,6 @@
 <script>
   export default {
     name: "player",
-    // props: {
-    //   fnclick: {
-    //     type: Function,
-    //     required: true
-    //   }
-    // },
     computed: {
       player() {
         return this.$store.state.gameObject.players[0];
@@ -34,9 +28,6 @@
       }
     },
     methods: {
-      // border(el) {
-      //   el.style.border = "1px solid blue"
-      // }
       setPlayerCard(card) {
         this.$store.dispatch('setPlayerCard', card)
       }
